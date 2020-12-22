@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Pomodoro Timer</h1>
+      <button id="settings-toggle" class="icon-btn" title="Settings">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="work">Work</button>
+      <button class="mode-tab" data-mode="shortBreak">Short Break</button>
+      <button class="mode-tab" data-mode="longBreak">Long Break</button>
+    </div>
+
+    <div class="timer-container">
+      <svg class="progress-ring" viewBox="0 0 260 260">
+        <circle class="progress-ring-bg" cx="130" cy="130" r="120" />
+        <circle class="progress-ring-circle" cx="130" cy="130" r="120" />
+      </svg>
+      <div class="timer-display">
+        <span id="timer-text">25:00</span>
+        <span id="timer-label">FOCUS</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="start-btn" class="control-btn primary">Start</button>
+      <button id="pause-btn" class="control-btn secondary" disabled>Pause</button>
+      <button id="reset-btn" class="control-btn secondary">Reset</button>
+    </div>
+
+    <div class="session-info">
+      <div class="session-counter">
+        <span class="session-label">Sessions completed</span>
+        <div class="session-dots" id="session-dots"></div>
+        <span id="session-count" class="session-number">0</span>
+      </div>
+    </div>
+
+    <div id="settings-panel" class="settings-panel hidden">
+      <div class="settings-overlay"></div>
+      <div class="settings-content">
+        <h2>Settings</h2>
+        <div class="setting-group">
+          <label for="work-duration">Work Duration (min)</label>
+          <input type="number" id="work-duration" min="1" max="90" value="25">
+        </div>
+        <div class="setting-group">
+          <label for="short-break-duration">Short Break (min)</label>
+          <input type="number" id="short-break-duration" min="1" max="30" value="5">
+        </div>
+        <div class="setting-group">
+          <label for="long-break-duration">Long Break (min)</label>
+          <input type="number" id="long-break-duration" min="1" max="60" value="15">
+        </div>
+        <div class="setting-group">
+          <label for="long-break-interval">Long Break After (sessions)</label>
+          <input type="number" id="long-break-interval" min="2" max="10" value="4">
+        </div>
+        <div class="settings-actions">
+          <button id="save-settings" class="control-btn primary">Save</button>
+          <button id="cancel-settings" class="control-btn secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
