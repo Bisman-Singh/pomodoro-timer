@@ -25,3 +25,5 @@ Open `index.html` in any modern browser. Click "Start" to begin a work session. 
 - HTML5
 - CSS3 (custom properties, SVG animation)
 - Vanilla JavaScript (AudioContext, Notification API, localStorage)
+
+<sub><sup>Originally developed and tested locally during learning. Later organized and pushed to GitHub for portfolio visibility.</sup></sub>
